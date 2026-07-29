@@ -1,0 +1,45 @@
+name: Bump Entry From Release
+
+# Fired by a plugin repo's own "notify-registry" workflow when it publishes a release
+# (see that workflow in each plugin repo for the dispatch side). Opens a PR updating this one
+# entry's manifestUrl/wasmSha256 - never commits straight to main, so a human still reviews
+# and merges before the new version is trusted. validate.yml re-checks the hash independently
+# on both the PR and the eventual merge to main.
+on:
+  repository_dispatch:
+    types: [plugin-release]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Compute new manifestUrl/wasmSha256 and patch registry.json
+        id: bump
+        run: bash scripts/bump-entry.sh "${{ github.event.client_payload.repo }}" "${{ github.event.client_payload.tag }}"
+
+      - name: Open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id="${{ steps.bump.outputs.id }}"
+          tag="${{ github.event.client_payload.tag }}"
+          branch="bump/${id}-${tag}"
+
+          git checkout -b "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry.json
+          git commit -m "chore: bump ${id} to ${tag}"
+          git push origin "$branch"
+
+          gh pr create \
+            --title "chore: bump ${id} to ${tag}" \
+            --body "Automated from ${{ github.event.client_payload.repo }}'s release ${tag}. Review the source at that tag before merging - this PR only pins a new hash, it does not itself constitute review." \
+            --head "$branch" \
+            --base main
