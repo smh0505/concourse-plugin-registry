@@ -61,8 +61,8 @@
       "name": "RAWG",
       "kind": "metadata",
       "repo": "smh0505/rawg-metadata-wasm-plugin",
-      "manifestUrl": "https://github.com/smh0505/rawg-metadata-wasm-plugin/releases/download/v0.3.1/plugin.json",
-      "wasmSha256": "734dd85c67f08f7dec27bdd2f86e0d5a174f0558597a4e9503bc13340cfc0fb9"
+      "manifestUrl": "https://github.com/smh0505/rawg-metadata-wasm-plugin/releases/download/v0.3.3/plugin.json",
+      "wasmSha256": "7ae599e0a2d48faf486bafb9c88bb3757455871558cef9479c98a413ea24c097"
     }
   ]
 }
