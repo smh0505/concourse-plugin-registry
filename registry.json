@@ -1,0 +1,68 @@
+{
+  "plugins": [
+    {
+      "id": "steam-wasm",
+      "name": "Steam",
+      "kind": "source",
+      "repo": "smh0505/steam-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/steam-source-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "d08475c6f58b052c0e28e617da5cf5c9a31a3966c3c6dc540b91a113436ae620"
+    },
+    {
+      "id": "gog-wasm",
+      "name": "GOG",
+      "kind": "source",
+      "repo": "smh0505/gog-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/gog-source-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "b9d2fa11087208ab30e773907f6c45133c9cd35cca62bbfe475aa6f63fb2929e"
+    },
+    {
+      "id": "epic-wasm",
+      "name": "Epic Games",
+      "kind": "source",
+      "repo": "smh0505/epic-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/epic-source-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "ac485e24416a6cbca24774b7afb3dec69b7ddeeae7af10c1f2486dda096bd3f6"
+    },
+    {
+      "id": "locale-remulator-wasm",
+      "name": "Locale Remulator",
+      "kind": "wrapper",
+      "repo": "smh0505/locale-remulator-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/locale-remulator-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "942f3a6889fd369f88c8a70752d02348028bebaebe1bd12e3baba838af634398"
+    },
+    {
+      "id": "locale-emulator-wasm",
+      "name": "Locale Emulator",
+      "kind": "wrapper",
+      "repo": "smh0505/locale-emulator-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/locale-emulator-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "e4d664c64b96d92bc4611e5e6b2e5e2562f6d6bbf1c1b19c13b0f252b3f1d4d5"
+    },
+    {
+      "id": "igdb-wasm",
+      "name": "IGDB",
+      "kind": "metadata",
+      "repo": "smh0505/igdb-metadata-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/igdb-metadata-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "5e4f333ef0474b59d0821bfabfbd76fbc6ae3ecd4053891c0a0cbe16f5710b59"
+    },
+    {
+      "id": "sgdb-wasm",
+      "name": "SteamGridDB",
+      "kind": "metadata",
+      "repo": "smh0505/sgdb-metadata-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/sgdb-metadata-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "02c3715997e50cb4e13ba0c8f8a58ba6ac4f6cea89a4d0f67df77f339948d976"
+    },
+    {
+      "id": "rawg-wasm",
+      "name": "RAWG",
+      "kind": "metadata",
+      "repo": "smh0505/rawg-metadata-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/rawg-metadata-wasm-plugin/releases/download/v0.3.1/plugin.json",
+      "wasmSha256": "734dd85c67f08f7dec27bdd2f86e0d5a174f0558597a4e9503bc13340cfc0fb9"
+    }
+  ]
+}

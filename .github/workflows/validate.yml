@@ -1,0 +1,21 @@
+name: Validate Registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "registry.json"
+      - "scripts/validate.sh"
+  pull_request:
+    paths:
+      - "registry.json"
+      - "scripts/validate.sh"
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate every entry's pinned hash
+        run: bash scripts/validate.sh
