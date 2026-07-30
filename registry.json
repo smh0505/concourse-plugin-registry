@@ -71,6 +71,22 @@
       "repo": "smh0505/data-theme-plugins",
       "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/31cd34d615cbc013bdf4fd8bf1d66997d22b95ab/themes/brick-block-data-theme/manifest.json",
       "wasmSha256": "19f75732d3717b1f214e9a52d3c8a41f3b2e9cc6a80e1fad23124a7bb5ea8c00"
+    },
+    {
+      "id": "midnight-neon-theme",
+      "name": "Midnight Neon",
+      "kind": "theme",
+      "repo": "smh0505/data-theme-plugins",
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/9d61b7a928168c0005c13237ee08a542dcac39cb/themes/midnight-neon-theme/manifest.json",
+      "wasmSha256": "85f81c05027544a472e30e0d89c5faf874cbfdd2869dca85b3b6a6c2f64ca58e"
+    },
+    {
+      "id": "sakura-theme",
+      "name": "Sakura",
+      "kind": "theme",
+      "repo": "smh0505/data-theme-plugins",
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/9d61b7a928168c0005c13237ee08a542dcac39cb/themes/sakura-theme/manifest.json",
+      "wasmSha256": "cf061a48ecb938e142048eeefdee8514f49e923edb273812ec6fbfe745664e8b"
     }
   ]
 }
