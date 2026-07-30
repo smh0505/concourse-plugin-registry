@@ -7,6 +7,11 @@ name: Bump Entry From Release
 # manifestUrl/wasmSha256 - never commits straight to main, so a human still reviews and merges
 # before the new version is trusted. validate.yml re-checks the hash independently on both the
 # PR and the eventual merge to main.
+#
+# Payload is {id, ref} - matched by id, not repo, since data-theme-plugins hosts multiple
+# themes (multiple registry entries) under one repo, unlike every other plugin repo's 1:1
+# mapping. ref is a version tag for source/wrapper/metadata entries, a commit SHA for theme
+# entries - see bump-entry.sh for the branching logic.
 on:
   repository_dispatch:
     types: [plugin-release]
@@ -23,21 +28,24 @@ jobs:
 
       - name: Compute new manifestUrl/wasmSha256 and patch registry.json
         id: bump
-        run: bash scripts/bump-entry.sh "${{ github.event.client_payload.repo }}" "${{ github.event.client_payload.tag }}"
+        run: bash scripts/bump-entry.sh "${{ github.event.client_payload.id }}" "${{ github.event.client_payload.ref }}"
 
       - name: Open PR
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           id="${{ steps.bump.outputs.id }}"
-          tag="${{ github.event.client_payload.tag }}"
-          branch="bump/${id}-${tag}"
+          ref="${{ github.event.client_payload.ref }}"
+          # Full commit SHAs (theme entries) are 40 chars - fine for the pinned URL itself, but
+          # unwieldy in a branch/PR name, so use a short form there purely for readability.
+          short_ref="${ref:0:7}"
+          branch="bump/${id}-${short_ref}"
 
           git checkout -b "$branch"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add registry.json
-          git commit -m "chore: bump ${id} to ${tag}"
+          git commit -m "chore: bump ${id} to ${short_ref}"
           # Force-push: this branch is disposable and bot-owned, always rebuilt fresh from
           # main, so a leftover branch from a prior run of this same dispatch (e.g. a retry)
           # should just be replaced, not treated as human work to preserve.
@@ -45,8 +53,8 @@ jobs:
 
           if gh pr list --head "$branch" --base main --json number --jq 'length' | grep -qx 0; then
             gh pr create \
-              --title "chore: bump ${id} to ${tag}" \
-              --body "Automated from ${{ github.event.client_payload.repo }}'s release ${tag}. Review the source at that tag before merging - this PR only pins a new hash, it does not itself constitute review." \
+              --title "chore: bump ${id} to ${short_ref}" \
+              --body "Automated from ${id}'s release/commit ${ref}. Review the source at that ref before merging - this PR only pins a new hash, it does not itself constitute review." \
               --head "$branch" \
               --base main
           else
