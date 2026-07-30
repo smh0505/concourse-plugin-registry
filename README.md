@@ -65,6 +65,10 @@ flagged. For `source`/`wrapper`/`metadata` entries this is the sibling `.wasm` b
 for `theme` entries (no separate binary - the manifest *is* the whole plugin, `cssVariables`
 and optionally a `cardVisual` AST) it's the hash of `manifestUrl`'s own bytes directly.
 
-`theme` entries are added/re-pinned by hand, not through the release-dispatch automation the
-other kinds use (see below) - `data-theme-plugins` doesn't fire a release dispatch, and its
-shared-tag model doesn't fit `bump-entry.sh`'s tagged-release assumption anyway.
+`theme` entries go through the same release-dispatch automation as every other kind -
+`data-theme-plugins` dispatches per changed theme (diffing each push rather than
+dispatching unconditionally, since one push there can touch any subset of its themes),
+carrying a commit SHA as `ref` instead of a version tag. `bump-entry.sh` matches dispatches by
+`id`, not `repo` - `data-theme-plugins` hosts multiple themes (multiple registry entries) under
+one repo, unlike every other plugin repo's 1:1 mapping, so `repo` alone can no longer identify
+a single entry the way it used to.
