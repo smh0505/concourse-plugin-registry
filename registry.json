@@ -63,6 +63,14 @@
       "repo": "smh0505/rawg-metadata-wasm-plugin",
       "manifestUrl": "https://github.com/smh0505/rawg-metadata-wasm-plugin/releases/download/v0.3.3/plugin.json",
       "wasmSha256": "7ae599e0a2d48faf486bafb9c88bb3757455871558cef9479c98a413ea24c097"
+    },
+    {
+      "id": "brick-block-data-theme",
+      "name": "Brick Block (Data)",
+      "kind": "theme",
+      "repo": "smh0505/data-theme-plugins",
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/a3f1906c7c679c29f5901cf8b4005b81e5719de2/themes/brick-block-data-theme/manifest.json",
+      "wasmSha256": "532ab78af67e0239b320e8767c9b0b15f14751460ade60097367e1cb6438a39d"
     }
   ]
 }

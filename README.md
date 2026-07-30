@@ -39,21 +39,32 @@ after the fact.
 {
   "id": "<matches the plugin's own plugin.json id>",
   "name": "<display name>",
-  "kind": "source" | "wrapper" | "metadata",
+  "kind": "source" | "wrapper" | "metadata" | "theme",
   "repo": "<owner>/<repo>",
   "manifestUrl": "<versioned release URL, never .../releases/latest/...>",
-  "wasmSha256": "<sha256 of that exact release's .wasm, computed and pinned by hand>"
+  "wasmSha256": "<sha256 of the pinned artifact, computed and pinned by hand>"
 }
 ```
 
-`manifestUrl` always points at a **specific tagged release** (`releases/download/vX.Y.Z/...`),
-never `releases/latest/...` - pointing at "latest" would mean silently trusting whatever a
-plugin's author publishes next, with no review of it at all, defeating the entire point of a
-curated list. Bumping which version is listed here is a deliberate, manual edit - re-download,
-re-review, re-hash, re-pin.
+`manifestUrl` always points at a **specific, immutable version** - pointing at anything that
+can change out from under it (`releases/latest/...`, a mutable tag) would mean silently
+trusting whatever a plugin's author publishes next, with no review of it at all, defeating the
+entire point of a curated list. Bumping which version is listed here is a deliberate, manual
+edit - re-download, re-review, re-hash, re-pin. For `source`/`wrapper`/`metadata` entries this
+is a tagged release asset (`releases/download/vX.Y.Z/...`); for `theme` entries it's a
+**commit-SHA'd raw URL** instead (`raw.githubusercontent.com/<owner>/<repo>/<commit-sha>/<path>`)
+- the `data-theme-plugins` repo deliberately reuses one release tag (`themes`) across every
+push, for a stable freeform-install URL, which makes that release asset's own URL equivalent to
+`latest`. A specific commit is immutable regardless of that repo's own release model.
 
-`wasmSha256` is computed from the actual published release asset (not self-reported by the
-plugin's own CI, and not the same thing as the Sigstore attestation's own hash) - Concourse
-checks a downloaded plugin's real bytes against this pinned value before installing from this
-registry, so a compromised release that doesn't match what was actually reviewed gets rejected
-outright, not just flagged.
+`wasmSha256` is computed from the actual pinned artifact (not self-reported by the plugin's own
+CI, and not the same thing as the Sigstore attestation's own hash) - Concourse checks a
+downloaded plugin's real bytes against this pinned value before installing from this registry,
+so content that doesn't match what was actually reviewed gets rejected outright, not just
+flagged. For `source`/`wrapper`/`metadata` entries this is the sibling `.wasm` binary's hash;
+for `theme` entries (no separate binary - the manifest *is* the whole plugin, `cssVariables`
+and optionally a `cardVisual` AST) it's the hash of `manifestUrl`'s own bytes directly.
+
+`theme` entries are added/re-pinned by hand, not through the release-dispatch automation the
+other kinds use (see below) - `data-theme-plugins` doesn't fire a release dispatch, and its
+shared-tag model doesn't fit `bump-entry.sh`'s tagged-release assumption anyway.
