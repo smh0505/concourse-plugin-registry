@@ -65,6 +65,14 @@
       "wasmSha256": "7ae599e0a2d48faf486bafb9c88bb3757455871558cef9479c98a413ea24c097"
     },
     {
+      "id": "thegamesdb-wasm",
+      "name": "TheGamesDB",
+      "kind": "metadata",
+      "repo": "smh0505/thegamesdb-metadata-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/thegamesdb-metadata-wasm-plugin/releases/download/v0.1.0/plugin.json",
+      "wasmSha256": "f0f31d8bff10a518a4f4d3d16304080bc4fe184dbe1daa78674dd30d2c9d61ef"
+    },
+    {
       "id": "brick-block-data-theme",
       "name": "Brick Block (Data)",
       "kind": "theme",
