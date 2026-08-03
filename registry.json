@@ -77,24 +77,24 @@
       "name": "Brick Block (Data)",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/377847be650181e28434324d0a9ebb3608a1f2c6/themes/brick-block-data-theme/manifest.json",
-      "wasmSha256": "8032bc66931dcb7d1473d58264c18043fb45948a137375f72d799ce68a3c6441"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/brick-block-data-theme/manifest.json",
+      "wasmSha256": "c2b25e411f3fccb9181e1f241f58288035ea37e16c3b0a4394b3fb375ddc3e94"
     },
     {
       "id": "midnight-neon-theme",
       "name": "Midnight Neon",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/9d61b7a928168c0005c13237ee08a542dcac39cb/themes/midnight-neon-theme/manifest.json",
-      "wasmSha256": "85f81c05027544a472e30e0d89c5faf874cbfdd2869dca85b3b6a6c2f64ca58e"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/midnight-neon-theme/manifest.json",
+      "wasmSha256": "2330a7a5f695ef613f5b190af25290ba8fa8d2d5f0cc69d095237bc596e9613e"
     },
     {
       "id": "sakura-theme",
       "name": "Sakura",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/2a741b1b7213fbafc1d1f4e80d751e2a166ac29f/themes/sakura-theme/manifest.json",
-      "wasmSha256": "86fa32472350f30dbfe466b3dfa469f7f3303218856ae96173cd6acd0fe9b34b"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/sakura-theme/manifest.json",
+      "wasmSha256": "73ffb170e689c0e9521148a66871548c7bf562e5593eb8c457d5af3fc436c9af"
     }
   ]
 }
