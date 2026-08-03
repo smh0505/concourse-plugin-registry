@@ -85,8 +85,8 @@
       "name": "Midnight Neon",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/9d61b7a928168c0005c13237ee08a542dcac39cb/themes/midnight-neon-theme/manifest.json",
-      "wasmSha256": "85f81c05027544a472e30e0d89c5faf874cbfdd2869dca85b3b6a6c2f64ca58e"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/midnight-neon-theme/manifest.json",
+      "wasmSha256": "2330a7a5f695ef613f5b190af25290ba8fa8d2d5f0cc69d095237bc596e9613e"
     },
     {
       "id": "sakura-theme",
