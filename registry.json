@@ -93,8 +93,8 @@
       "name": "Sakura",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/2a741b1b7213fbafc1d1f4e80d751e2a166ac29f/themes/sakura-theme/manifest.json",
-      "wasmSha256": "86fa32472350f30dbfe466b3dfa469f7f3303218856ae96173cd6acd0fe9b34b"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/sakura-theme/manifest.json",
+      "wasmSha256": "73ffb170e689c0e9521148a66871548c7bf562e5593eb8c457d5af3fc436c9af"
     }
   ]
 }
