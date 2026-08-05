@@ -77,8 +77,8 @@
       "name": "Brick Block (Data)",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/5e9a54b60cb656d71335ec5a5167cdef30659f55/themes/brick-block-data-theme/manifest.json",
-      "wasmSha256": "3544da75c03080759459d3522efe63012d616f259ceb78e2681b9b3a3e265c29"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/b9c9c237dcbd98157429c6a9cdf8353c4b03517f/themes/brick-block-data-theme/manifest.json",
+      "wasmSha256": "d7380893195c442e5d49b86deabc2e53ac9f4afd38f7abb4baf93bca5e9a0b93"
     },
     {
       "id": "midnight-neon-theme",
