@@ -95,6 +95,14 @@
       "repo": "smh0505/data-theme-plugins",
       "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/4c3da134109893a0d83e27ce553b4139173a68af/themes/sakura-theme/manifest.json",
       "wasmSha256": "73ffb170e689c0e9521148a66871548c7bf562e5593eb8c457d5af3fc436c9af"
+    },
+    {
+      "id": "vndb-wasm",
+      "name": "VNDB",
+      "kind": "metadata",
+      "repo": "smh0505/vndb-metadata-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/vndb-metadata-wasm-plugin/releases/download/v0.1.0/plugin.json",
+      "wasmSha256": "d4e649f08a6152d1c45f33018ec762a5461dec2f82073e8cbe7269e338cfc380"
     }
   ]
 }
