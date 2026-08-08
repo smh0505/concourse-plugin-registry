@@ -103,6 +103,14 @@
       "repo": "smh0505/vndb-metadata-wasm-plugin",
       "manifestUrl": "https://github.com/smh0505/vndb-metadata-wasm-plugin/releases/download/v0.1.1/plugin.json",
       "wasmSha256": "6f445e8fc250bde65c247ff8411ee9e5455a715ceb9e3c05e9d70328eddcc795"
+    },
+    {
+      "id": "xbox-wasm",
+      "name": "Xbox",
+      "kind": "source",
+      "repo": "smh0505/xbox-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/xbox-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
+      "wasmSha256": "b099e6f2d5569dafa1109c981124345f6e163b1c34d5e8f8fd467c85f016cc12"
     }
   ]
 }
