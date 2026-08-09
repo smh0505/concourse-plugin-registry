@@ -111,6 +111,14 @@
       "repo": "smh0505/xbox-source-wasm-plugin",
       "manifestUrl": "https://github.com/smh0505/xbox-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
       "wasmSha256": "b099e6f2d5569dafa1109c981124345f6e163b1c34d5e8f8fd467c85f016cc12"
+    },
+    {
+      "id": "ea-wasm",
+      "name": "EA",
+      "kind": "source",
+      "repo": "smh0505/ea-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
+      "wasmSha256": "6a3a08faf805f131f9d352a06e083ae0925a23f0428757d72b943a707aa1638f"
     }
   ]
 }
