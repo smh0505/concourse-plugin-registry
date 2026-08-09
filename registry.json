@@ -109,8 +109,8 @@
       "name": "Xbox",
       "kind": "source",
       "repo": "smh0505/xbox-source-wasm-plugin",
-      "manifestUrl": "https://github.com/smh0505/xbox-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
-      "wasmSha256": "b099e6f2d5569dafa1109c981124345f6e163b1c34d5e8f8fd467c85f016cc12"
+      "manifestUrl": "https://github.com/smh0505/xbox-source-wasm-plugin/releases/download/v0.1.1/plugin.json",
+      "wasmSha256": "651ac0333979e420912e71397b4b3602c85936ee9d099de9872902574ee9b637"
     },
     {
       "id": "ea-wasm",
