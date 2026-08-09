@@ -117,8 +117,8 @@
       "name": "EA",
       "kind": "source",
       "repo": "smh0505/ea-source-wasm-plugin",
-      "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
-      "wasmSha256": "6a3a08faf805f131f9d352a06e083ae0925a23f0428757d72b943a707aa1638f"
+      "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.1/plugin.json",
+      "wasmSha256": "63e97b18a348625081b442dd6364b0918c2e858af6f59985e603726b8ee3c1d3"
     }
   ]
 }
