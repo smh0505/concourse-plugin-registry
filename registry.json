@@ -119,6 +119,14 @@
       "repo": "smh0505/ea-source-wasm-plugin",
       "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.1/plugin.json",
       "wasmSha256": "63e97b18a348625081b442dd6364b0918c2e858af6f59985e603726b8ee3c1d3"
+    },
+    {
+      "id": "ubisoft-wasm",
+      "name": "Ubisoft Connect",
+      "kind": "source",
+      "repo": "smh0505/ubisoft-source-wasm-plugin",
+      "manifestUrl": "https://github.com/smh0505/ubisoft-source-wasm-plugin/releases/download/v0.1.0/plugin.json",
+      "wasmSha256": "765fb4827c89f59b77c889ee3b8d4c6ac3c646c27931fedcf6dfed840e74910a"
     }
   ]
 }
