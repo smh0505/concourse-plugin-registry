@@ -127,6 +127,14 @@
       "repo": "smh0505/ubisoft-source-wasm-plugin",
       "manifestUrl": "https://github.com/smh0505/ubisoft-source-wasm-plugin/releases/download/v0.1.1/plugin.json",
       "wasmSha256": "2d0077d43e876e1cc4aebacd8d6d47c2b13a327fbdda14be21dfde4c74cf4471"
+    },
+    {
+      "id": "arc-raiders-theme",
+      "name": "ARC Raiders",
+      "kind": "theme",
+      "repo": "smh0505/data-theme-plugins",
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/e3378a1dce9a36e95d0f23f30ba5ef6b95838648/themes/arc-raiders-theme/manifest.json",
+      "wasmSha256": "f4712254e7c176e325584a767d780d9a9bad8764ce4002dfec159b96d54cf4b1"
     }
   ]
 }
