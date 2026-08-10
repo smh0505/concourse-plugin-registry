@@ -133,8 +133,8 @@
       "name": "ARC Raiders",
       "kind": "theme",
       "repo": "smh0505/data-theme-plugins",
-      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/a503fcbd404e56ca0b03fd81b0098b79eb6358cf/themes/arc-raiders-theme/manifest.json",
-      "wasmSha256": "160f721000afd91844affa543e64721ea2fe531cf8b5cb57a0b6fca7b6bd4b23"
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/802f9a877bf8d0d2637cc4747391a2427069ad5f/themes/arc-raiders-theme/manifest.json",
+      "wasmSha256": "3f031c2889b3cdeff624390f755927a18d77d726e697ef01e8e3482baf3d6bd4"
     }
   ]
 }
