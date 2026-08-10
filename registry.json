@@ -117,8 +117,8 @@
       "name": "EA",
       "kind": "source",
       "repo": "smh0505/ea-source-wasm-plugin",
-      "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.1/plugin.json",
-      "wasmSha256": "63e97b18a348625081b442dd6364b0918c2e858af6f59985e603726b8ee3c1d3"
+      "manifestUrl": "https://github.com/smh0505/ea-source-wasm-plugin/releases/download/v0.1.2/plugin.json",
+      "wasmSha256": "f02ec1d348012b9beb814fb5b8c1cfee19312573297b428e44276d2cb3137fc7"
     },
     {
       "id": "ubisoft-wasm",
