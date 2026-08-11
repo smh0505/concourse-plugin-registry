@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Given a registry entry's id and a ref (a version tag for source/wrapper/metadata kinds, a
-# commit SHA for theme kind), rewrites that entry's manifestUrl + wasmSha256 in registry.json,
-# hashing the real published/pinned artifact (never trusting a self-reported hash). Matched by
-# id, not repo - data-theme-plugins hosts multiple themes (multiple registry entries) under one
-# repo, so repo alone can no longer identify a single entry the way it could when every plugin
-# repo mapped 1:1 to one registry entry. repo itself is read from the matched entry, not passed
-# in separately, since registry.json already knows it once the entry is found by id.
+# commit SHA for theme/controller kinds), rewrites that entry's manifestUrl + wasmSha256 in
+# registry.json, hashing the real published/pinned artifact (never trusting a self-reported
+# hash). Matched by id, not repo - data-theme-plugins/data-controller-plugins each host multiple
+# entries under one repo, so repo alone can no longer identify a single entry the way it could
+# when every plugin repo mapped 1:1 to one registry entry. repo itself is read from the matched
+# entry, not passed in separately, since registry.json already knows it once the entry is found
+# by id.
 set -euo pipefail
 
 id="$1"
@@ -20,11 +21,14 @@ fi
 repo=$(echo "$entry" | jq -r '.repo')
 kind=$(echo "$entry" | jq -r '.kind')
 
-if [[ "$kind" == "theme" ]]; then
-  # ref is a commit SHA. data-theme-plugins reuses one release tag ("themes") across every
-  # push, so a tagged-release asset URL would be equivalent to releases/latest - pin against
-  # the immutable commit instead. id doubles as the theme's folder name under themes/.
-  manifest_url="https://raw.githubusercontent.com/$repo/$ref/themes/$id/manifest.json"
+if [[ "$kind" == "theme" || "$kind" == "controller" ]]; then
+  # ref is a commit SHA. data-theme-plugins/data-controller-plugins each reuse one release tag
+  # across every push, so a tagged-release asset URL would be equivalent to releases/latest -
+  # pin against the immutable commit instead. id doubles as the entry's folder name under
+  # themes/ or mappings/ depending on kind.
+  content_dir="themes"
+  if [[ "$kind" == "controller" ]]; then content_dir="mappings"; fi
+  manifest_url="https://raw.githubusercontent.com/$repo/$ref/$content_dir/$id/manifest.json"
   sha=$(curl -sfL "$manifest_url" | sha256sum | cut -d' ' -f1)
 else
   # ref is a version tag (e.g. v0.3.2).
