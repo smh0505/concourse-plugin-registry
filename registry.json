@@ -135,6 +135,14 @@
       "repo": "smh0505/data-theme-plugins",
       "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-theme-plugins/b3cab98051fa40ad6ca5f7a03f20c9aedce5d8a6/themes/arc-raiders-theme/manifest.json",
       "wasmSha256": "cfbfc1b125a56da62c6628078216cc22750ac5df40757d41a2cd666a21bf632f"
+    },
+    {
+      "id": "8bitdo-micro",
+      "name": "8BitDo Micro",
+      "kind": "controller",
+      "repo": "smh0505/data-controller-plugins",
+      "manifestUrl": "https://raw.githubusercontent.com/smh0505/data-controller-plugins/e2fc5255344536e160eb79609a843b1481552c43/mappings/8bitdo-micro/manifest.json",
+      "wasmSha256": "66077d42d8ddff9bed6e748a35207d39c9888aace960627ee2f45c88a93b8992"
     }
   ]
 }
