@@ -7,12 +7,13 @@
 # - source/wrapper/metadata: the artifact is a .wasm binary, found via the manifest's own
 #   "entry" field (same convention Concourse's own plugin_installer.rs uses) as a sibling of
 #   manifestUrl.
-# - theme: a data-only theme has no separate binary - the manifest itself *is* the whole
-#   plugin, so wasmSha256 here is the hash of manifestUrl's own bytes directly. Also pinned via
-#   a commit-SHA'd raw.githubusercontent.com URL rather than a tagged release asset - the
-#   data-theme-plugins repo deliberately reuses one release tag ("themes") across every push
-#   for a stable freeform-install URL, which makes that release asset's own URL equivalent to
-#   "latest" (exactly what the check below rejects) - a specific commit is immutable regardless.
+# - theme/controller: a data-only manifest (theme's cssVariables, controller's mapping) has no
+#   separate binary - the manifest itself *is* the whole plugin, so wasmSha256 here is the hash
+#   of manifestUrl's own bytes directly. Also pinned via a commit-SHA'd raw.githubusercontent.com
+#   URL rather than a tagged release asset - both data-theme-plugins and data-controller-plugins
+#   deliberately reuse one release tag across every push for a stable freeform-install URL,
+#   which makes that release asset's own URL equivalent to "latest" (exactly what the check
+#   below rejects) - a specific commit is immutable regardless.
 set -euo pipefail
 
 fail=0
@@ -33,7 +34,7 @@ while read -r entry; do
     continue
   fi
 
-  if [[ "$kind" == "theme" ]]; then
+  if [[ "$kind" == "theme" || "$kind" == "controller" ]]; then
     actual_sha=$(curl -sL "$manifest_url" | sha256sum | cut -d' ' -f1)
   else
     manifest=$(curl -sL "$manifest_url")
